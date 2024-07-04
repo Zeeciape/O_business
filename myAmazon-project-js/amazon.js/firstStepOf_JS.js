@@ -3,23 +3,24 @@ localStorage.setItem('top_page','false')
 
 /****lodding_moveLeft****/
 setInterval(()=>{
-    let lodding_moveLeft_P=document.querySelector('.top_lodding_moveLeft');
-    let lodding_moveLeft_PWidth=Number(lodding_moveLeft_P.dataset.width) ||0;
+  let lodding_moveLeft_P=document.querySelector('.top_lodding_moveLeft');
+  let lodding_moveLeft_PWidth=Number(lodding_moveLeft_P.dataset.width) ||0;
 
-        
+
+  if(lodding_moveLeft_PWidth != 95){
     lodding_moveLeft_P.style.width=`${lodding_moveLeft_PWidth}%`;
     lodding_moveLeft_P.dataset.width=lodding_moveLeft_PWidth+5;
-
+  }
     
-    //lodding_moveLeft_PWidth===2
-    if(lodding_moveLeft_PWidth===10 && localStorage.getItem('top_page')==='true'){
-      document.querySelector('.top_page_div').style.display='none';
-      document.querySelector('.lodding_box_cotainer_div').style.display='none';
-    }
-    
+  //lodding_moveLeft_PWidth===2
+  if(lodding_moveLeft_PWidth===95 && localStorage.getItem('top_page')==='true'){
+    document.querySelector('.top_page_div').style.display='none';
+    document.querySelector('.lodding_box_cotainer_div').style.display='none';
+  }
+  
+  
     
 },1000)
-
 
 
 
